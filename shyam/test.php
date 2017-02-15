@@ -1,4 +1,48 @@
-<?php include_once('includes/header.php') ?>
+<?php 
+    require_once('includes/header.php');
+    require_once('connection.php');
+    require_once('functions.php');
+    $event_id = $_POST['event'];
+    global $link;
+    $query = "SELECT 
+    Fk_ai_int_eid AS eid,
+    vchr_title AS event_title,
+    LEFT(ltext_events_details, 100) AS event_details,
+    vchr_org_name AS org_name,
+    vchr_org_place AS event_place,
+    vchr_org_city AS event_city,
+    CONCAT(date_events_start_date,
+            ' ',
+            date_events_start_time,
+            ' ',
+            DATE_FORMAT(date_events_start_date, '%W'),
+            ' to ',
+            date_events_end_date,
+            ' ',
+            date_events_end_time,
+            ' ',
+            DATE_FORMAT(date_events_end_date, '%W')) AS event_time,
+    CONCAT('data/event_images/', vchr_eimage_1) AS eimg1,
+    CONCAT('data/event_images/', vchr_eimage_2) AS eimg2,
+    CONCAT('data/event_images/', vchr_eimage_3) AS eimg3,
+    CONCAT('data/event_images/', vchr_eimage_4) AS eimg4,
+    CONCAT('data/event_images/', vchr_eimage_5) AS eimg5
+FROM
+    tb_event_titles ti
+        LEFT JOIN
+    tb_organiser_details od ON ti.Fk_ai_int_eid = od.Fk_int_orgid
+        LEFT JOIN
+    tb_event_images i ON ti.Fk_ai_int_eid = i.Fk_int_eid
+        LEFT JOIN
+    tb_event_details ed ON ti.Fk_ai_int_eid = ed.Fk_int_eid
+        LEFT JOIN
+    tb_events_timing tm ON ti.Fk_ai_int_eid = tm.Fk_int_eid
+    WHERE `Fk_ai_int_eid` = '$event_id'";
+
+      $result = mysqli_query($link,$query);
+      $row = mysqli_fetch_assoc($result);
+     print_r($row);
+    ?>
     <script src="test/js/jssor.slider-22.1.8.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         jssor_1_slider_init = function() {
@@ -128,17 +172,17 @@
     </div>
   </div>
   <div class="col-md-4 hidden-sm hidden-xs" style=" height: 285px; background: #6d6a64; color: #fff;">
-    <h2 class="ename1">Event Name</h2>
+    <h2 class="ename1"><?php echo $row['event_title']; ?></h2>
       <h4 class="small-head"><b>Venue</b></h4>
       <div class="address">
-      <h5>The Raviz International</h5>
-      <h5>Opp New Bus stand , Jafarkan Colony road</h5>
-      <h5>Kozhikode </h5>
+      <h5><?php echo $row['org_name']; ?></h5>
+      <h5><?php echo $row['event_place']; ?></h5>
+      <h5><?php echo $row['event_city']; ?></h5>
       </div>
       <hr>
       <h4 class="small-head" ><b>Date & Time</b></h4>
       <div class="address">
-      <h5><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp 5th March 2017 - 7th March 2017</h5>
+      <h5><i class="fa fa-calendar" aria-hidden="true"></i> &nbsp <?php echo $row['event_time']; ?></h5>
       <h5><i class="fa fa-clock-o" aria-hidden="true"></i> &nbsp  10:00 AM - 05:00 PM</h5>
       </div>
       

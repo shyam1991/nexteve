@@ -83,7 +83,7 @@ $output='<div class="container">
   <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">	';
 				while($row = mysqli_fetch_assoc($result)){	
           //print_r($row);
-					$output.='<a href=events.php?event='.$row['eid'].'><div class="col-sm-4 col-md-3 col-lg-3 col-xs-12">
+					$output.='<form action="test.php" id="event" method="post"> <a href="javascript: submitForm();"><div class="col-sm-4 col-md-3 col-lg-3 col-xs-12">
           <input type="hidden" value="'.$row['eid'].'" name="event"></input>
       <div class="thumbnail">
         <img src="'.$row['eimg1'].'" alt="Bootstrap Thumbnail: Beautiful Bootstrap Thumbnail like Material Design Cards">
@@ -93,7 +93,7 @@ $output='<div class="container">
           <h6 class="text-center text-hash"><i class="fa fa-calendar" aria-hidden="true"></i> 27<small>th</small> Jan 2017 -- 29<small>th</small> Jan 2017</h6>
         </div>
       </div>
-    </div></a>';
+    </div></a></form>';
 						}
 
 					$output.= '</div>
@@ -102,11 +102,15 @@ $output='<div class="container">
 					return $output;
 				}
 
-
-				
-
-
 ?>
+				<script>
+function submitForm(){
+    $('#event').submit();
+}
+</script>
+
+
+
 
 
 
