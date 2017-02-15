@@ -4,17 +4,77 @@ body{
 	font-family: 'Gentium Basic', serif;
 	font-size: 18px;
 }
+/*Text colors start*/
 .text-white{
 color: #fff;
 }
 .text-white : hover{
 	color: #fff;
 }
-#no-style{
-	text-decoration: none;
-	cursor: pointer;
+.text-navy{
+	color: #072d6b;
 }
-/*Fonts start*/
+.text-hash{
+	color:#98999b
+}
+/*Text colors start*/
+/*background colors start*/
+.bg-white{
+	background: #fff;
+}
+.bg-hash{
+	background: #fcfcfc;
+}
+.bg-tb-head1{
+	background: #821b80;
+}
+/*background colors ene*/
+/*Custom borders start*/
+.br-dot-1r{
+ border-right:1px dotted #000; 
+}
+.br-dot-1l{
+	border-left:1px dotted #ccc;
+}
+/*Custom borders end*/
+/*Allignments Start*/
+.full-width{
+	width: 100%;
+}
+.pad-1per{
+	padding: 1%;
+}
+.mar-1per{
+	margin:1%;
+}
+/*Allignments Start*/
+/*custom buttons start*/
+.btn-category{
+	margin-bottom: 10px;
+	background: none;
+	border:none;
+	font-size:14px;
+	text-align: left;
+}
+.btn-category i{
+	font-size: 20px;
+	background:#680184;
+	color: #fff;
+	padding: 2%;
+	margin-right: 5px;
+}
+.btn-category:hover{
+	background: #777777;
+	color: #fff;
+}
+/*custom buttons end*/
+/*font style and size start*/
+.font-14{
+	font-size: 14px;
+}
+.font-18{
+	font-size: 18px;
+}
 .main-head{
 font-family: 'Carter One', cursive;
 }
@@ -30,9 +90,6 @@ font-family: 'Sansita One', cursive;
 .ename1{
 font-family: 'Salsa', cursive;
 }
-.ename2{
-
-}
 .ename-suggessions{
 	font-family: 'Carter One', cursive;
 }
@@ -42,14 +99,37 @@ font-family: 'Salsa', cursive;
 .address{
 	font-family: 'Kotta One', serif;
 }
+
 .address h5{
 	font-size: 16px;
 }
 .table-head{
 font-family: 'Alegreya Sans SC', sans-serif;
 }
-/*Fonts End*/
+/*font style and size start*/
+/*text-styles start*/
+#no-style{
+	text-decoration: none;
+	cursor: pointer;
+}
 
+/*text-styles end*/
+/*custome divs start*/
+.header-contact-number a{
+	color: #fff; 
+	text-decoration: none;
+}
+.home{
+background:#680184;
+color: #fff;
+}
+.home:hover{
+	background: #777777;
+	color: #fff;
+}
+.home i{
+	font-size: 18px;
+}
 .sec-pad-50-top{
 padding-top: 50px;
 }
@@ -167,6 +247,48 @@ padding-top:25px;
 .pad-bottom-25{
 padding-bottom:25px;
 }
+.first-header{
+background: rgb(181,189,200); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(181,189,200,1) 0%, rgba(130,140,149,1) 0%, rgba(40,52,59,1) 0%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 0%,rgba(40,52,59,1) 0%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(181,189,200,1) 0%,rgba(130,140,149,1) 0%,rgba(40,52,59,1) 0%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
+padding:1%;
+}
+.events-banner{
+	background: #fff; 
+	border-bottom: 3px dotted #ccc;
+}
+.events-banhead-right{
+	height: 285px; 
+	background: #6d6a64; 
+	color: #fff;
+}
+.map{
+	height: 150px; 
+	width: 100%
+}
+.rel-events-frame{
+	border:1px solid #ccc; 
+	margin-bottom:2%; 
+	background: #fff; 
+	box-shadow: 2px 3px 3px 0px #ccc;
+}
+.comments-frame{
+	background: #fff; 
+	padding: 10px
+}
+.user-comment{
+	border:1px solid #e3e4e5; 
+	padding: 10px; 
+	box-shadow: 2px 2px 3px #e3e4e5; 
+	margin: 10px;
+}
+.user-comment img{
+	border:1px solid #f4f4f4; 
+	background: #fafafa
+}
+/*custom divs end*/
 footer{
 	background:#444444;
 	padding: 15px;

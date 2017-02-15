@@ -83,17 +83,20 @@ $output='<div class="container">
   <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">	';
 				while($row = mysqli_fetch_assoc($result)){	
           //print_r($row);
-					$output.='<form action="test.php" id="event" method="post"> <a href="javascript: submitForm();"><div class="col-sm-4 col-md-3 col-lg-3 col-xs-12">
+					$output.='<form action="test.php" id="event" method="post"> 
+          <a href="javascript: submitForm();">
           <input type="hidden" value="'.$row['eid'].'" name="event"></input>
-      <div class="thumbnail">
-        <img src="'.$row['eimg1'].'" alt="Bootstrap Thumbnail: Beautiful Bootstrap Thumbnail like Material Design Cards">
-        <div class="caption">
-          <h5 class="ename1 text-navy text-center"><strong>'.$row['event_title'].'</strong></h5>
+          <div class="col-sm-4 col-md-3 col-lg-3 col-xs-12">
+            <div class="thumbnail">
+              <img src="data/event_images/4x4/4x4.jpg" alt="Error load image">
+              <div class="caption">
+          <h4 class="ename1 text-navy text-center"><strong>'.$row['event_title'].'</strong></h4>
           <h6 class=" social-head text-center text-hash">'.$row['event_city'].'</h6>
-          <h6 class="text-center text-hash"><i class="fa fa-calendar" aria-hidden="true"></i> 27<small>th</small> Jan 2017 -- 29<small>th</small> Jan 2017</h6>
+          <h6 class="text-center text-hash"><i class="fa fa-calendar" aria-hidden="true"></i> 27<small>th</small> Jan 2017 -- 29<small>th</small> Jan 2017</h6><h1 class="text-center"></h1>
         </div>
-      </div>
-    </div></a></form>';
+        </div>
+    </div>   
+      </a></form>';
 						}
 
 					$output.= '</div>
