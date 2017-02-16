@@ -21,7 +21,7 @@
       font-size: 18px;
       height: 30px;
       width: auto;
-      color: #fff;
+      color: #777777;
       background: none; 
       }
       .styled-select.slate select option{
@@ -51,7 +51,7 @@
       </div>
     </header>
     <nav class="navbar navbar-default bg-navy">
-      <div class="container-fluid" style="background:#777777; margin-top: -1px; margin-left: -1px;">
+      <div class="container-fluid" style="background:#fff; margin-top: -1px; margin-left: -1px;">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
