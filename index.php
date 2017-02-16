@@ -63,14 +63,17 @@ include_once('connection.php');
    </div>
    <!-- End Carousel -->
 <section>
+   <div class="container">
+    <div class="row"> 
     <?php 
     $con->next_result();
     $query = $con->query("call SP_events_highlightsid_limited(11,2)");
+
     while($res = $query->fetch_array()){
        //print_r($res); die();
       ?>
 
-          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 pad-25-tb">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad-25-tb">
             <div class="card">
                 <div class="card-image">
                     <img class="img-responsive" src="data/home-img/6x4/car_show1.jpg">
@@ -113,9 +116,11 @@ include_once('connection.php');
       <?php
     }
     ?>   
-</section>
 
-<section class="container">
+    </div>
+</div>
+</section>
+<section>
  <button class="col-md-12 btn btn-default">MORE</button> 
 </section>
 </div>

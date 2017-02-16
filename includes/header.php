@@ -9,7 +9,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <style type="text/css">
       .styled-select.slate {
-      background: #000;
+      
       height: 30px;
       width: auto;
       }
@@ -17,14 +17,19 @@
       border-top:none;
       border-right: none;
       border-left: none;
-      border-bottom:1px solid #ccc;
-      font-size: 16px;
+      border-bottom:none;
+      font-size: 18px;
       height: 30px;
       width: auto;
-      color: #58026d;
+      color: #fff;
+      background: none; 
+      }
+      .styled-select.slate select option{
+        background: #fafafa;
+        color: #777777;
       }
       .styled-select.slate select:hover{
-      background: #eaeaea;
+      background: none;
       cursor: pointer;
       }
     </style>
@@ -46,7 +51,7 @@
       </div>
     </header>
     <nav class="navbar navbar-default bg-navy">
-      <div class="container-fluid">
+      <div class="container-fluid" style="background:#777777; margin-top: -1px; margin-left: -1px;">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">

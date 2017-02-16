@@ -1,7 +1,7 @@
 <?php include_once('includes/header.php');?>
 <h1 class="page-title">Registration<small> New</small></h1>
 <div class="row">
-  <div class="col-lg-12">
+  <div class="col-lg-10">
     <div class="panel panel-default">
       <div class="panel-heading clearfix">
         <h3 class="panel-title">Organisation Details </h3>
@@ -13,177 +13,177 @@
       </div>
       <div class="panel-body">
         <form class="form-horizontal">
-          <div class="form-group">
-            <label class="col-sm-2 control-label">Organisation Name *</label> 
-            <div class="col-sm-10">
+        <h2><b>Organiser Address</b></h2>
+          <div class="form-group"> 
+            <div class="col-sm-12">
               <div class="input-group"> 
-                <span class="input-group-addon"><i class="fa fa-building-o" aria-hidden="true"></i></span> 
+                <span class="input-group-addon"><i class="icon-briefcase"></i></span> 
                 <input type="text" placeholder="Organisation Name *" class="form-control"> 
               </div>
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label">Organisation Name *</label> 
-            <div class="col-sm-10">
+            <div class="col-sm-12">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-building-o" aria-hidden="true"></i></span> 
-                <input type="text" placeholder="Organisation Name *" class="form-control"> 
+                <span class="input-group-addon"><i class="icon-location"></i></span> 
+                <input type="text" placeholder="Building *" class="form-control"> 
               </div>
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-2 control-label">Organisation Name *</label> 
-            <div class="col-sm-10">
+            <div class="col-sm-12">
               <div class="input-group"> 
-                <span class="input-group-addon"><i class="fa fa-building-o" aria-hidden="true"></i></span> 
-                <input type="text" placeholder="Organisation Name *" class="form-control"> 
+                <span class="input-group-addon"><i class="icon-location"></i></span> 
+                <input type="text" placeholder="Place/City *" class="form-control"> 
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <div class="input-group"> 
+                <span class="input-group-addon"><i class="icon-location"></i></span> 
+                <input type="text" placeholder="District *" class="form-control"> 
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <div class="input-group"> 
+                <span class="input-group-addon"><i class="icon-location"></i></span> 
+                <input type="text" placeholder="State *" class="form-control"> 
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <div class="input-group"> 
+                <span class="input-group-addon"><i class="icon-location"></i></span> 
+                <input type="text" placeholder="Nation *" class="form-control"> 
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <div class="input-group"> 
+                <span class="input-group-addon"><i class="icon-location"></i></span> 
+                <input type="text" placeholder="ZIP Code" class="form-control"> 
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <div class="input-group"> 
+                <span class="input-group-addon"><i class="icon-location"></i></span> 
+                <textarea class="form-control" placeholder="G-Map Embedded Link*"></textarea>
               </div>
             </div>
           </div>
           <div class="line-dashed"></div>
+          <h2><b>Social Media Links</b></h2>
           <div class="form-group">
-            <label class="col-sm-2 control-label">Right addon</label> 
-            <div class="col-sm-10">
+            <div class="col-sm-12">
               <div class="input-group"> 
                 <input type="text" class="form-control"> 
-                <span class="input-group-addon">.00</span>
+                <span class="input-group-addon"><i class="icon-facebook"></i></span>
               </div>
             </div>
           </div>
-          <div class="line-dashed"></div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label">Both addon</label> 
-            <div class="col-sm-10">
+          <div class="form-group"> 
+            <div class="col-sm-12">
               <div class="input-group"> 
-                <span class="input-group-addon">$</span>
-                <input type="text"  class="form-control"> 
-                <span class="input-group-addon">.00</span>
+                <input type="text" class="form-control"> 
+                <span class="input-group-addon"><i class="icon-gplus"></i></span>
               </div>
             </div>
           </div>
-          <div class="line-dashed"></div>
           <div class="form-group">
-            <label class="col-sm-2 control-label">Icon addon</label> 
-            <div class="col-sm-10">
+            <div class="col-sm-12">
               <div class="input-group"> 
-                <span class="input-group-addon"><i class="icon-mail"></i></span>
-                <input type="text"  class="form-control"> 
+                <input type="text" class="form-control"> 
+                <span class="input-group-addon"><i class="icon-twitter"></i></span>
               </div>
             </div>
           </div>
-          <div class="line-dashed"></div>
           <div class="form-group">
-            <label class="col-sm-2 control-label">Input addons</label> 
-            <div class="col-sm-10">
+            <div class="col-sm-12">
               <div class="input-group"> 
-                <span class="input-group-addon"><input type="checkbox"></span>
-                <input type="text"  class="form-control"> 
+                <input type="text" class="form-control"> 
+                <span class="input-group-addon"><i class="icon-pinterest"></i></span>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <div class="col-sm-10 col-sm-offset-2">
+            <div class="col-sm-12">
               <div class="input-group"> 
-                <span class="input-group-addon"><input type="radio"></span>
-                <input type="text"  class="form-control"> 
+                <input type="text" class="form-control"> 
+                <span class="input-group-addon"><i class="icon-linkedin"></i></span>
               </div>
             </div>
           </div>
-          <div class="line-dashed"></div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label">Buttons addons</label> 
-            <div class="col-sm-10">
+          <div class="form-group"> 
+            <div class="col-sm-12">
               <div class="input-group"> 
-                <span class="input-group-btn"><button class="btn btn-primary" type="button">Go!</button></span>
-                <input type="text"  class="form-control"> 
+                <input type="text" class="form-control"> 
+                <span class="input-group-addon"> <i class="fa  fa-youtube-square">&nbsp &nbsp </i> </span>
               </div>
             </div>
           </div>
+          <div class="line-dashed"></div>
+          <h2><b>Contact Person Details</b></h2>
           <div class="form-group">
-            <div class="col-sm-10 col-sm-offset-2">
+            <div class="col-sm-12">
               <div class="input-group"> 
-                <input type="text"  class="form-control"> 
-                <span class="input-group-btn"><button class="btn btn-success" type="button">Go!</button></span>
+                <span class="input-group-addon"><i class="icon-user"></i></span> 
+                <input type="text" placeholder="Place/City *" class="form-control"> 
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <div class="input-group"> 
+                <span class="input-group-addon"><i class="icon-phone"></i></span> 
+                <input type="text" placeholder="Place/City *" class="form-control"> 
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <div class="input-group"> 
+                <span class="input-group-addon"><i class="icon-mail"></i></span> 
+                <input type="text" placeholder="Place/City *" class="form-control"> 
+              </div>
+            </div>
+          </div>
+          <div class="line-dashed"></div>
+          <h2 class="col-sm-offset-2"><b>Attachments</b></h2>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <div class="input-group"> 
+                <span class="input-group-addon">&nbsp &nbsp Logo <i class="icon-upload"></i></span>
+                <input type="file"  class="form-control"> 
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <div class="input-group"> 
+                <span class="input-group-addon">Banner <i class="icon-upload"></i></span>
+                <input type="file"  class="form-control"> 
               </div>
             </div>
           </div>
           <div class="line-dashed"></div>
           <div class="form-group">
-            <label class="col-sm-2 control-label">With dropdowns</label> 
-            <div class="col-sm-10">
-              <div class="input-group">
-                <div class="input-group-btn">
-                  <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </div>
-                <input type="text"  class="form-control"> 
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-10 col-sm-offset-2">
-              <div class="input-group">
-                <input type="text"  class="form-control"> 
-                <div class="input-group-btn">
-                  <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-                  <ul class="dropdown-menu pull-right">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </div>
+            <div class="col-sm-12">
+              <div class="input-group"> 
+                <span class="input-group-addon"><i class="icon-info"></i></span>
+                <textarea class="form-control" placeholder="About organiser"></textarea> 
               </div>
             </div>
           </div>
           <div class="line-dashed"></div>
           <div class="form-group">
-            <label class="col-sm-2 control-label">Segmented</label> 
-            <div class="col-sm-10">
-              <div class="input-group">
-                <div class="input-group-btn">
-                  <button type="button" class="btn btn-white" tabindex="-1">Action</button>
-                  <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </div>
-                <input type="text"  class="form-control">
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-10 col-sm-offset-2">
-              <div class="input-group">
-                <input type="text"  class="form-control">
-                <div class="input-group-btn">
-                  <button type="button" class="btn btn-white" tabindex="-1">Action</button>
-                  <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-                  <ul class="dropdown-menu pull-right">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="line-dashed"></div>
-          <div class="form-group">
-            <div class="col-sm-4 col-sm-offset-2">
+            <div class="col-sm-4 col-sm-offset-8">
               <button type="submit" class="btn btn-white">Cancel</button>
               <button type="submit" class="btn btn-primary">Save changes</button>
             </div>

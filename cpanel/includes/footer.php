@@ -395,5 +395,3 @@
 		canvas.parentNode.parentNode.appendChild(legendHolder.firstChild);
 	});
 </script>
-</body>
-</html>

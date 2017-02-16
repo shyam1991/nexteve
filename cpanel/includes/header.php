@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -156,9 +155,9 @@
 				</ul>
 			</li>
 			<li class="has-sub"> 
-				<a href="#/"><i class="icon-flow-tree"></i><span class="title">Menu Levels</span></a> 
+				<a href="#/"><i class="icon-flow-tree"></i><span class="title">Masters</span></a> 
 				<ul class="nav collapse"> 
-					<li><a href="#/"><span class="title">Menu Level 1.1</span></a></li> 
+					<li><a href="#/"><span class="title">Org Registration </span></a></li> 
 					<li><a href="#/"><span class="title">Menu Level 1.2</span></a></li> 
 					<li class="has-sub">
 						<a href="#/"><span class="title">Menu Level 1.3</span></a> 

@@ -65,55 +65,62 @@ $result = mysqli_query($link,$query);
 // }
 
 
-$output='<div class="container" style="margin-top:-20px;">
-			<div class="col-md-2 hidden-xs hidden-sm" style="border-right: 1px solid #ccc; height: 620px; ">
-			<div class="" style="margin-top:75px;">
-				<div style="background: #fafafa; padding:5px; margin-bottom: 10px;"><i class="fa fa-eye" aria-hidden="true"></i> <a href="#" class="align-center" style="padding-left: 20px;"> Events
-					<span class="badge pull-right">4</span></a><br>
-				</div>
-				<div style="background: #fafafa; padding:5px; margin-bottom: 10px;">
-					<i class="fa fa-handshake-o" aria-hidden="true"></i> <a href="#" class="align-center" style="padding-left: 20px;">Conferences
-					<span class="badge pull-right">4</span></a><br>
-				</div>
-				<div style="background: #fafafa; padding:5px; margin-bottom: 10px;">
-					<i class="fa fa-camera-retro" aria-hidden="true"></i> <a href="#" class="align-center" style="padding-left: 20px;"> Tourism
-					<span class="badge pull-right">4</span></a><br>
-				</div>
-				<div style="background: #fafafa; padding:5px; margin-bottom: 10px;">
-					<i class="fa fa-futbol-o" aria-hidden="true"></i> <a href="#" class="align-center" style="padding-left: 20px;"> Sports
-					<span class="badge pull-right">4</span></a><br>
-				</div>
-				<div style="background: #fafafa; padding:5px; margin-bottom: 10px;">
-					<i class="fa fa-users" aria-hidden="true"></i> <a href="#" class="align-center" style="padding-left: 20px;"> Organizers
-						<span class="badge pull-right">4</span></a>
-				</div>
-				</div>
-			</div>
-			<div class="col-md-8" style=" padding-bottom:5%;">';
+$output='<div class="container">
+<div class="col-md-12">
+  <div class="col-lg-2 col-md-2 hidden-sm hidden-xs" style="border-right: 1px solid #ccc; margin-left: -25px; width:225px;">
+    <div class="btn-group full-width">
+      <button type="button" class="btn btn-sm home full-width font-14"><i class="fa fa-home pull-left" aria-hidden="true"></i> HOME</button>
+      <hr>
+      <p class="font-14 text-hash text-uppercase">Category</p>
+      <button class="btn btn-sm btn-category full-width pull-left"><i class="fa fa-camera-retro" aria-hidden="true"></i> Entertainment <span class="badge pull-right">10</span></button>
+      <button class="btn btn-sm btn-category full-width pull-left"><i class="fa fa-camera-retro" aria-hidden="true"></i> Sports <span class="badge pull-right">10</span></button>
+      <button class="btn btn-sm btn-category full-width"><i class="fa fa-camera-retro" aria-hidden="true"></i> Conferences <span class="badge pull-right">10</span></button>
+      <button class="btn btn-sm btn-category full-width"><i class="fa fa-camera-retro" aria-hidden="true"></i> Inagurations <span class="badge pull-right">10</span></button>
+      <button class="btn btn-sm btn-category full-width"><i class="fa fa-camera-retro" aria-hidden="true"></i> Offers Zone <span class="badge pull-right">10</span></button>
+      <hr>
+    </div>
+  </div>
+  <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">	';
 				while($row = mysqli_fetch_assoc($result)){	
-					$output.='<a href="events.php?event='.$row['eid'].'"><div class="container sresult_box ">
-								<div class="col-md-4 col-xs-12">
-									<img src="'.$row['eimg1'].'" class="zoom-img-4" width="100%" >
-								</div>
-								<div class="col-md-8 col-xs-12">
-									<h4><b>'.$row['event_title'].'</b></h4>
-									<h6>'.$row['event_details'].'</h6>
-									<p><i class="fa fa-map-marker" aria-hidden="true"></i><a href=""> ' .$row['event_place'].',' .$row['event_city'].' | ' .$row['org_name'].'</a><a href=""> </a>
-									</p>
-									<p style="color:#9f9fa0;"><i class="fa fa-calendar" aria-hidden="true"></i> ' .$row['event_time'].'
-									</p>
-								</div>
-							</div></a>';
+          //print_r($row);
+					$output.='<form action="test.php" id="event" method="post"> 
+          <a href="javascript: submitForm();">
+          <input type="hidden" value="'.$row['eid'].'" name="event"></input>
+          <div class="col-sm-4 col-md-3 col-lg-3 col-xs-12">
+            <div class="thumbnail">
+              <img src="data/event_images/4x4/4x4.jpg" alt="Error load image">
+              <div class="caption">
+          <h4 class="ename1 text-navy text-center"><strong>'.$row['event_title'].'</strong></h4>
+          <h6 class=" social-head text-center text-hash">'.$row['event_city'].'</h6>
+          <h6 class="text-center text-hash"><i class="fa fa-calendar" aria-hidden="true"></i> 27<small>th</small> Jan 2017 -- 29<small>th</small> Jan 2017</h6><h1 class="text-center"></h1>
+        </div>
+        </div>
+    </div>   
+      </a></form>';
 						}
 
 					$output.= '</div>
-									<div class="col-md-2 hidden-xs" style="border-left: 1px solid #ccc; height: 620px;"></div>
 									</div>
 								</div>';
 					return $output;
 				}
 
-				
-
-
 ?>
+				<script>
+function submitForm(){
+    $('#event').submit();
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
