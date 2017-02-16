@@ -108,6 +108,7 @@ body{font-family:'Open Sans Condensed',sans-serif;font-size:18px}
         <hr>
         <h6><i class="fa fa-calendar" aria-hidden="true"></i> 27<small>th</small> Jan 2017 <i class="fa fa-arrows-h" aria-hidden="true"></i> 29<small>th</small> Jan 2017</h6><h6><i class="fa fa-clock-o" aria-hidden="true"></i> 10:10 Am to 11:00 Pm</h6> 
       </div>
+      <div></div>
     </div>
   </div>
 	</div>
