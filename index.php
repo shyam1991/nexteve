@@ -63,7 +63,7 @@ include_once('connection.php');
    </div>
    <!-- End Carousel -->
 <section>
-   <div class="container">
+   <div class="" style="padding-left: 1%; padding-right: 1%;">
     <div class="row"> 
     <?php 
     $con->next_result();
@@ -73,7 +73,7 @@ include_once('connection.php');
        //print_r($res); die();
       ?>
 
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad-25-tb">
+          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 pad-25-tb">
             <div class="card">
                 <div class="card-image">
                     <img class="img-responsive" src="data/home-img/6x4/car_show1.jpg">
@@ -88,8 +88,8 @@ include_once('connection.php');
                 </div><!-- card content -->
                 <div class="card-action">
                      <label></label>
-                    <a href="#" target="new_blank">Beach Road Kozhikode</a>
-                    <h4>01/01/17 - 22/01/17 <small>(10:00 Am to 05:00 PM)</small></h4>
+                    <a href="#" class="text-center">Beach Road Kozhikode</a>
+                    <h6 class="text-center text-hash"><i class="fa fa-calendar" aria-hidden="true"></i> 27<small>th</small> Jan 2017 -- 29<small>th</small> Jan 2017</h6><h1 class="text-center"></h1>
                     <a href="events.php?event=<?php $res[0] ?>" class="btn btn-info btn-block" style="color:#fff;">Learn More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>                   
                 </div><!-- card actions -->
                 <div style="padding: 20px; position: absolute; background-color: #FFF; width: 100%; overflow-y: auto; left:0; bottom:0; height: 100%; z-index: 1; display: none;" id="<?php echo $res[0]."cont"?>">
