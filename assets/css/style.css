@@ -5,11 +5,11 @@ body{
 	font-size: 18px;
 }
 /*Text colors start*/
-.text-white{
-color: #fff;
+.no-decoration, .no-decoration:hover{
+	text-decoration: none;
 }
-.text-white : hover{
-	color: #fff;
+.text-white ,.text-white:hover{
+color: #fff;
 }
 .text-navy{
 	color: #072d6b;

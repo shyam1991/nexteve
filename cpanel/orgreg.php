@@ -13,8 +13,16 @@
         </ul>
       </div>
       <div class="panel-body">
-        <form action="col-md-12 connections/test.php" method="post" class="form-horizontal">
+        <form action="connections/orgreg_con.php" method="post" class="form-horizontal" enctype="multipart/form-data">
         <h2><b>Organiser Details</b></h2>
+          <div class="form-group"> 
+            <div class="col-sm-12">
+              <div class="input-group"> 
+                <span class="input-group-addon"><i class="icon-briefcase"></i></span> 
+                <input type="text" name="orgname" placeholder="Organisation Name *" class="form-control"> 
+              </div>
+            </div>
+          </div>
           <div class="form-group"> 
             <div class="col-sm-6">
               <div class="input-group"> 
@@ -22,13 +30,14 @@
                 <select name="catid" class="form-control">
                   <option disabled="" selected="">Choose Category</option>
                   <option value="1">Health care</option>
+                  <option value="2">Health care</option>
                 </select>
               </div>
             </div>
             <div class="col-sm-6">
               <div class="input-group"> 
                 <span class="input-group-addon"><i class="icon-briefcase"></i></span> 
-                <input type="text" name="orgname" placeholder="Organisation Name *" class="form-control"> 
+                <input type="text" name="web" placeholder="website " class="form-control"> 
               </div>
             </div>
           </div>
@@ -73,7 +82,7 @@
             <div class="col-sm-6">
               <div class="input-group"> 
                 <span class="input-group-addon"><i class="icon-location"></i></span>
-                <select class="form-control" name="stid" disabled>
+                <select class="form-control" name="stid">
                   <option value="14">Kerala</option>
                 </select>  
               </div>
@@ -81,7 +90,7 @@
             <div class="col-sm-6">
               <div class="input-group"> 
                 <span class="input-group-addon"><i class="icon-location"></i></span> 
-                <select class="form-control" name="ntnid" disabled>
+                <select class="form-control" name="ntnid">
                   <option value="356">India</option>
                 </select> 
               </div>
@@ -111,7 +120,7 @@
             <div class="col-sm-6">
               <div class="input-group"> 
                 <span class="input-group-addon"><i class="icon-mail"></i></span> 
-                <input type="text" name="email" placeholder="Email *" class="form-control"> 
+                <input type="text" name="pemail" placeholder="Email *" class="form-control"> 
               </div>
             </div>
           </div>
@@ -203,14 +212,16 @@
             <div class="col-sm-6">
               <div class="input-group"> 
                 <span class="input-group-addon">&nbsp &nbsp Logo <i class="icon-upload"></i></span>
-                <input type="file" name="imglogo"  class="form-control"> 
+                <input type="file" name="logo"  class="form-control">
               </div>
+              <span class="col-sm-offset-3 text-danger">Logo size should be propotioate (4x4)</span>
             </div>
             <div class="col-sm-6">
               <div class="input-group"> 
                 <span class="input-group-addon">Banner <i class="icon-upload"></i></span>
-                <input type="file" name="imgbanner"  class="form-control"> 
+                <input type="file" name="banner"  class="form-control"> 
               </div>
+              <span class="col-sm-offset-3 text-danger">Banner size should be horizontal (4x4)</span>
             </div>
           </div>
           <div class="line-dashed"></div>

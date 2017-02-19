@@ -2,14 +2,11 @@
   include_once('includes/header.php');
   include_once('connection.php');
   $con->next_result();
-  $query = $con->query("CALL SP_organisation_details(1001)");
+  $query = $con->query("CALL SP_organisation_details(1002)");
   $res = $query->fetch_array();
   ?>
 <style type="text/css">
-  .container{
-  }
-  .wrapper{
-  }
+
   #header{
   border:1px solid #ddd;
   margin-bottom:20px;
@@ -45,7 +42,11 @@
   font-size: 42px;
   float:left;
   margin-top:-65px !important;
-  margin-left:15px;
+  margin-left:0px;
+  width:992px;
+  background: #424242;
+  color:#fafafa;
+  opacity: 0.8;
  } 
   .site-description{
   color:#fff;
@@ -83,6 +84,15 @@
   outline: 0;
   }
   @media (max-width: 768px) {
+     .site-name{
+  color:#fff;
+  font-size:1.5em;
+  float:left;
+  line-height:40px;
+  width: 600px;
+  margin-top:-80px!important;
+  margin-left:115px;
+  }
   .navbar-brand1{
   max-width: 100px;
   max-height:100px;
@@ -103,15 +113,16 @@
   left:0;
   position:relative;
   }
-  }
+  } 
   @media (max-width: 490px) {
   .site-name{
   color:#fff;
   font-size:1.5em;
   float:left;
-  line-height:20px;
-  margin-top:-100px !important;
-  margin-left:125px;
+  line-height:25px;
+  width: 68%;
+  margin-top:-65px !important;
+  margin-left:115px;
   } 
   .site-description{
   color:#fff;
@@ -135,7 +146,7 @@
               <!-- Wrapper for slides -->
               <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                  <img src="<?php echo $res['banner']?>" width="100%">
+                  <img src="data/org_img/banner/<?php echo $res['banner']?>" width="100%">
                 </div>
               </div>
             </div>
@@ -144,13 +155,13 @@
           <nav class="navbar navbar-default">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-              <a class="navbar-brand1" href="#"><img class="img-responsive" src="<?php echo $res['logo']?>"></a>
-              <span class="sub-head site-name"><?php echo $res['orgname']?></span>
+              <a class="navbar-brand1" href="#"><img class="img-responsive" src="data/org_img/logo/<?php echo $res['logo']?>"></a>
+              <span class="sub-head site-name"><label style="color:#fff;">&nbsp <?php echo $res['orgname']?></label> &nbsp</span>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="mainNav" >
               <ul class="nav main-menu navbar-nav">
-                <li><a href="<?php echo $res['website']?>"><i class="fa fa-globe"></i> <?php echo substr($res['website'], 7) ?></a></li>
+                <li><a href="http://<?php echo $res['website']?>"><i class="fa fa-globe"></i> <?php echo $res['website'] ?></a></li>
               </ul>
               <ul class="nav  navbar-nav navbar-right">
                 <li><a href="<?php echo $res['fb']?>"><i class="fa fa-facebook"></i></a></li>
@@ -173,10 +184,10 @@
       <h3 class="text-white"><?php echo $res['orgname']?></h3>
       <h4 class="text-white"><?php echo $res['place']?> | <?php echo $res['city']?></h4>
       <h4 class="text-white"><?php echo $res['location']?></h4>
-      <h5 class="text-white"><i class="fa fa-phone" aria-hidden="true"></i><a href="" class="text-white"> <?php echo $res['phone1']?> </a> |  <a href="" class="text-white"><?php echo $res['phone2']?></a></h5>
-      <h5 class="text-white"><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="" class="text-white"><?php echo $res['pemail1']?></a><br></h5>
+      <h5 class="text-white"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:<?php echo $res['phone1']?>" class="text-white no-decoration"> <?php echo $res['phone1']?> </a> |  <a href="tel:<?php echo $res['phone2']?>" class="text-white no-decoration"><?php echo $res['phone2']?></a></h5>
+      <h5 class="text-white "><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="" class="text-white no-decoration"><?php echo $res['pemail']?></a><br></h5>
       <h5 class="text-white">
-      <i class="fa fa-globe" aria-hidden="true"></i> <a href="" class="text-white"><?php echo $res['website']?></a>
+      <i class="fa fa-globe" aria-hidden="true"></i> <a href="<?php echo $res['website']?>" class="text-white no-decoration"><?php echo $res['website']?></a>
       </div>
       <hr>
       <div style="max-height: 200px; overflow-x: hidden;overflow-y: auto;">
