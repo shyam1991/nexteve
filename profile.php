@@ -179,30 +179,7 @@
 <!--/#HEADER-->
 <div class="container">
   <div class="row" style="background: #fff;">
-    <div class="col-lg-4 col-md-4 col-sm-12" style="background:#6d6a64;">
-      <div class="address">
-      <h3 class="text-white"><?php echo $res['orgname']?></h3>
-      <h4 class="text-white"><?php echo $res['place']?> | <?php echo $res['city']?></h4>
-      <h4 class="text-white"><?php echo $res['location']?></h4>
-      <h5 class="text-white"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:<?php echo $res['phone1']?>" class="text-white no-decoration"> <?php echo $res['phone1']?> </a> |  <a href="tel:<?php echo $res['phone2']?>" class="text-white no-decoration"><?php echo $res['phone2']?></a></h5>
-      <h5 class="text-white "><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="" class="text-white no-decoration"><?php echo $res['pemail']?></a><br></h5>
-      <h5 class="text-white">
-      <i class="fa fa-globe" aria-hidden="true"></i> <a href="<?php echo $res['website']?>" class="text-white no-decoration"><?php echo $res['website']?></a>
-      </div>
-      <hr>
-      <div style="max-height: 200px; overflow-x: hidden;overflow-y: auto;">
-        <iframe width="100%" frameborder="0" style="border:0"
-          src="<?php echo $res['map']?>" allowfullscreen></iframe>
-      </div>
-      <hr>
-      <h4 class="text-center" style="color: #fff;">Previous Events</h4>
-      <div class="" style="width: 100%; padding:1%; background: #616263;">
-        <img src="http://technext.github.io/Evento/images/demo/bg-slide-01.jpg" width="32.5%;" style="border:2px solid #fff; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="New Year Celibration">
-        <img src="http://technext.github.io/Evento/images/demo/bg-slide-01.jpg" width="32.5%;" style="border:2px solid #fff; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="New Year Celibration">
-        <img src="http://technext.github.io/Evento/images/demo/bg-slide-01.jpg" width="32.5%;" style="border:2px solid #fff; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="New Year Celibration">
-      </div>
-    </div>
-    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" style="border:1px solid #ccc; padding: 2%; max-height: 550px; overflow-y:auto; overflow-x: hidden; ">
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" padding: 2%; max-height: 550px; overflow-y:auto; overflow-x: hidden; ">
       <h3>About US</h3>
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12" style="max-height: 150px; overflow-y:auto; overflow-x: hidden;">
@@ -237,6 +214,34 @@
       }
       ?>
       </div>
+      <?php 
+        $con->next_result();
+      $query = $con->query("CALL SP_organisation_details(1002)");
+      $res = $query->fetch_array();
+      ?>
+          <div class="col-lg-4 col-md-4 col-sm-12" style="background:#6d6a64;">
+      <div class="address">
+      <h3 class="text-white"><?php echo $res['orgname']?></h3>
+      <h4 class="text-white"><?php echo $res['place']?> | <?php echo $res['city']?></h4>
+      <h4 class="text-white"><?php echo $res['location']?></h4>
+      <h5 class="text-white"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:<?php echo $res['phone1']?>" class="text-white no-decoration"> <?php echo $res['phone1']?> </a> |  <a href="tel:<?php echo $res['phone2']?>" class="text-white no-decoration"><?php echo $res['phone2']?></a></h5>
+      <h5 class="text-white "><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="" class="text-white no-decoration"><?php echo $res['pemail']?></a><br></h5>
+      <h5 class="text-white">
+      <i class="fa fa-globe" aria-hidden="true"></i> <a href="<?php echo $res['website']?>" class="text-white no-decoration"><?php echo $res['website']?></a>
+      </div>
+      <hr>
+      <div style="max-height: 200px; overflow-x: hidden;overflow-y: auto;">
+        <iframe width="100%" frameborder="0" style="border:0"
+          src="<?php echo $res['map']?>" allowfullscreen></iframe>
+      </div>
+      <hr>
+      <h4 class="text-center" style="color: #fff;">Previous Events</h4>
+      <div class="" style="width: 100%; padding:1%; background: #616263;">
+        <img src="http://technext.github.io/Evento/images/demo/bg-slide-01.jpg" width="32.5%;" style="border:2px solid #fff; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="New Year Celibration">
+        <img src="http://technext.github.io/Evento/images/demo/bg-slide-01.jpg" width="32.5%;" style="border:2px solid #fff; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="New Year Celibration">
+        <img src="http://technext.github.io/Evento/images/demo/bg-slide-01.jpg" width="32.5%;" style="border:2px solid #fff; cursor: pointer;" data-toggle="tooltip" data-placement="top" title="New Year Celibration">
+      </div>
+    </div>
       </div>
       </a>
     </div>
