@@ -1,5 +1,7 @@
-<?php include_once('includes/header.php') ?>
-<div class="container events-banner" style="">
+<?php include_once('includes/header.php');
+      include_once('connection.php');
+ ?>
+<div class="container events-banner">
   <div class="row pad-1per">
     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
       <div id="myCarousel" class="carousel slide">
@@ -9,33 +11,19 @@
           <li data-target="#myCarousel" data-slide-to="2" class="" contenteditable="false"></li>
         </ol>
         <div class="carousel-inner">
-          <div class="item" style="">
-            <img src="data/event_images/1001_new_year_image1.jpg" alt="" class="">
-            <div class="carousel-caption">
-              <h4 class="">First Slide Title</h4>
-              <p class="">
-                Description for First Slide, this First Slide.
-              </p>
+        <?php 
+        $con->next_result();
+        $qry = $con->query("call SP_events_banners(1001)");
+        while($res = $qry->fetch_array()){
+          echo '<div class="item '.$res['imgorder'].'" style="">
+          <img src=" '.$res['banner'].'" alt="" class="">
+          <div class="carousel-caption">
+              <h4 class="">'.$res['caption'].'</h4>
+              <p class="">'.$res['caption1'].'</p>
             </div>
-          </div>
-          <div class="item active">
-            <img src="data/event_images/1001_new_year_image1.jpg" alt="" class="">
-            <div class="carousel-caption">
-              <h4 class="">Second Slide Title</h4>
-              <p class="">
-                Description for Second Slide, this is Second Slide.
-              </p>
-            </div>
-          </div>
-          <div class="item" style="">
-            <img src="data/event_images/1001_new_year_image1.jpg" alt="" class="">
-            <div class="carousel-caption">
-              <h4 class="">Third Slide Title</h4>
-              <p class="">
-                Description for Third Slide, this is Third Slide.
-              </p>
-            </div>
-          </div>
+            </div>';
+          }
+        ?>
         </div>
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
@@ -45,26 +33,29 @@
         </a>
       </div>
     </div>
-    <div class="col-md-4 hidden-sm hidden-xs events-banhead-right">
-      <h2 class="ename1">Event Name</h2>
+    <?php 
+    $con->next_result();
+    $qry = $con->query("call SP_eventsdetails(1001)");
+    $res = $qry->fetch_array();
+    echo'   <div class="col-md-4 hidden-sm hidden-xs events-banhead-right">
+      <h3 class="ename1">'.$res['evname'].'</h3>
       <h4 class="small-head"><b>Venue</b></h4>
       <div class="address">
-        <h5>The Raviz International</h5>
-        <h5>Opp New Bus stand , Jafarkan Colony road</h5>
-        <h5>Kozhikode </h5>
+        <h5>'.$res['vplace'].'</h5>
+        <h5>'.$res['vcity'].' , '.$res['locfname'].'</h5>
       </div>
       <hr>
       <h4 class="small-head" ><b>Date & Time</b></h4>
       <div class="address">
-        <h5><i class="fa fa-calendar mar-1per" aria-hidden="true"></i>  5th March 2017 - 7th March 2017</h5>
-        <h5><i class="fa fa-clock-o mar-1per" aria-hidden="true"></i>  10:00 AM - 05:00 PM</h5>
+        <h5><i class="fa fa-calendar mar-1per" aria-hidden="true"></i> '.$res['sdate'].' - '.$res['edate'].'</h5>
+        <h5><i class="fa fa-clock-o mar-1per" aria-hidden="true"></i>   '.$res['stime'].' -  '.$res['etime'].'</h5>
       </div>
-      <hr>
-    </div>
+    </div>';
+    ?>
   </div>
 </div>
 <div class="container bg-white">
-<div class="col-md-8 bg-white br-dot-1r">
+<div class="col-md-8  bg-white br-dot-1r">
 <h2 class="sub-head">Ticket </h2>
 <div class="table-responsive">
 <table class="table table-bordered table-inverse bg-hash">
@@ -77,57 +68,60 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Platinum</td>
-      <td>500.00</td>
-      <td></td>
-    </tr>
-    <tr>
-    <th scope="row">1</th>
-    <td>Gold</td>
-    <td>350.00</td>
-    <td></td>
-    </tr>
-    <tr>
-    <th scope="row">1</th>
-    <td>Silver</td>
-    <td>250.00</td>
-    <td></td>
-    </tr>
+  <?php 
+$con->next_result();
+$qry = $con->query("call SP_event_ticket_charges(1001)");
+while($res = $qry->fetch_array()){
+  echo'<tr>
+      <th scope="row">#</th>
+      <td>'.$res['ttype'].'</td>
+      <td>'.$res['tcharge'].'</td>
+      <td>'.$res['tic_rem'].'</td>
+    </tr>';
+}
+  ?>
   </tbody>
 </table>
 </div>
 <div class="col-md-12">
 <h3 class="small-head">Event Description</h3>
 <div class="">
-<p>Every year since 1987, National Science Day is celebrated on February 28. On this day in 1928, Great Indian Scientist 
-</p></div>
+<?php 
+$con->next_result();
+    $qry = $con->query("call SP_eventsdetails(1001)");
+    $res = $qry->fetch_array();
+echo'<p>'.$res['evname'].'</p>';
+?>
+</div>
 </div>
 </div>
 <div class="col-md-4 bg-white br-dot-1l">
 <h2 class="social-head">Connect to People</h2>
 <button class="btn" style="display: block; width: 100%; background: #00c1db; ">Invite Friends</button>
 <hr>
-<h3 class="small-head">Organiser Info</h3>
+<?php 
+echo'<h3 class="small-head">Contact Info</h3>
 <div class="address">
-<h5>Organiser Name</h5>
-<h5>Contact person name</h5>
-<h5><a href="tel:+9194475209786" id="no-style">+91 9447 520986</a></h5>
-<h5><a href="" id="no-style">info@armcivf.com</a></h5>
+<h5> <i class="fa fa-user-circle" aria-hidden="true"></i> '.$res['orgcpname'].'</h5>
+<h5> <i class="fa fa-phone-square" aria-hidden="true"></i> <a href="tel:'.$res['orgcpphone'].'" id="no-style"> '.$res['orgcpphone'].'</a></h5>
+<h5> <i class="fa fa-envelope" aria-hidden="true"></i> <a href="" id="no-style">'.$res['orgcpemail'].'</a></h5>
+<h4>Organised By '.$res['orgname'].'</h4>
 </div>
-<button class="btn btn-info btn-sm">Click More</button>
+<button class="btn btn-info btn-sm">Click More</button>';
+?>
 <hr>
 <h3 class="small-head">How to reach Venue ?</h3>
 <div class="address">
-<h4><b>The Raviz International</b></h4>
+<?php 
+echo '<h4><b>'.$res['vplace'].'</b></h4>';
+?>
 <div class="hidden-lg hidden-md visible-sm visible-xs">
 <h5>Opp New Bus stand |Jafarkan Colony road</h5>
 <h5>Kozhikode </h5>
 </div>
 </div>
 <div class="map">
-<iframe width="100%" frameborder="0" style="border:0"src="https://www.google.com/maps/embed/v1/place?q=ARMC+IVF+Fertility+Centre,+Kannur,+Kerala,+India&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU" allowfullscreen></iframe> 
+<iframe width="100%" frameborder="0" style="border:0"src="<?php echo $res['map']?>" allowfullscreen></iframe> 
 </div>
 <hr>
 <div class="" style="">
