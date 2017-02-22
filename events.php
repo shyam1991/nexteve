@@ -138,31 +138,5 @@ echo '<h4><b>'.$res['vplace'].'</b></h4>';
 </div>
 </div>
 </div>
-<div class="container comments-frame">
-  <hr>
-  <h3>Comments..!</h3>
-  <div class="user-comment">
-    <div class="media-left media-middle">
-      <a href="#">
-      <img class="media-object" src="https://www.arcadia.edu/sites/default/files/default-user.png" width="50px;" alt="...">
-      </a>
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading">Middle aligned media</h4>
-      Nice event ljsdflsjadfl;kjasdl;fkjasdfl;
-      sdf;lkasfl;kasjdfas
-      sdfasdkljfas'[df
-      ]
-    </div>
-  </div>
-  <div class="col-md-1 col-sm-2 col-xs-2" style="">
-    <img class="media-object" src="https://www.arcadia.edu/sites/default/files/default-user.png" width="100%" alt="..." style="">
-  </div>
-  <div class="col-md-11 col-sm-10 col-xs-10">
-    <textarea class="form-control"></textarea>
-    <br>
-    <button class=" pull-right btn btn-success">Post</button>
-  </div>
-</div>
 <script type="text/javascript">jssor_1_slider_init();</script>
 <?php include_once('includes/footer.php') ?>

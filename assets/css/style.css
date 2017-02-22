@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Carter+One|Chivo|Chonburi|Gentium+Basic|Kotta+One|Lateef|Racing+Sans+One|Ramabhadra|Salsa|Sansita+One|Schoolbell|Tienne');
+events-banhead-right@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Carter+One|Chivo|Chonburi|Gentium+Basic|Kotta+One|Lateef|Racing+Sans+One|Ramabhadra|Salsa|Sansita+One|Schoolbell|Tienne');
 body{
 	background: #fafafa;
 	font-family: 'Gentium Basic', serif;
@@ -252,14 +252,24 @@ background:url(../img/header.png);
 width: 100%;
 padding:1%;
 }
+.pad-50-lr{
+	padding-left: 50px;
+	padding-right: 50px;
+}
+.pad-10-lr{
+	padding-left: 10px;
+	padding-right: 10px;
+}
 .events-banner{
 	background: #fff; 
 	border-bottom: 3px dotted #ccc;
 }
 .events-banhead-right{
-	height: 285px; 
-	background: #6d6a64; 
-	color: #fff;
+	height: 345px;
+	color:#010356;
+	padding-right: 10px;
+	padding-left: 10px;
+	background: url('assets/img/bg-img1.png');
 }
 .map{
 	height: 150px; 
