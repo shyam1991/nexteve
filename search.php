@@ -88,8 +88,7 @@ $event_id=array();
 
 ?>
 <div class="container">
-<div class="col-md-12">
-  
+<div class="col-md-12"> 
       </div>
     </div>
 <?php include_once('includes/footer.php') ?>
