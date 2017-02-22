@@ -38,7 +38,7 @@ include_once('connection.php');
         <div class="carousel-inner">
             <?php 
             $con->next_result();
-            $qry = $con->query("CALL SP_home_banners_list(1001)");
+            $qry = $con->query("CALL SP_home_banners_list()");
             while($res = $qry->fetch_array()){
               if($res['evposition'] == '1'){
                 $order = "active";
@@ -50,37 +50,6 @@ include_once('connection.php');
             </div>';  
             }
             ?>
-            
-            <div class="item">
-                <img src="data/event_images/banner/1002_new-year_image1.jpg" alt="First Slide" width="100%">
-            </div>
-            <div class="item">
-                <img src="data/event_images/banner/1003_new-year_image1.jpg" alt="First Slide" width="100%">
-            </div>
-            <div class="item">
-                <img src="data/event_images/banner/1003_new-year_image1.jpg" alt="First Slide" width="100%">
-            </div>
-            <div class="item">
-                <img src="data/event_images/banner/1003_new-year_image1.jpg" alt="First Slide" width="100%">
-            </div>
-            <div class="item">
-                <img src="data/event_images/banner/1003_new-year_image1.jpg" alt="First Slide" width="100%">
-            </div>
-            <div class="item">
-                <img src="data/event_images/banner/1003_new-year_image1.jpg" alt="First Slide" width="100%">
-            </div>
-            <div class="item">
-                <img src="data/event_images/banner/1003_new-year_image1.jpg" alt="First Slide" width="100%">
-            </div>
-            <div class="item">
-                <img src="data/event_images/banner/1003_new-year_image1.jpg" alt="First Slide" width="100%">
-            </div>
-            <div class="item">
-                <img src="data/event_images/banner/1003_new-year_image1.jpg" alt="First Slide" width="100%">
-            </div>
-            <div class="item">
-                <img src="data/event_images/banner/1003_new-year_image1.jpg" alt="First Slide" width="100%">
-            </div>
         </div>
         <!-- Carousel controls -->
         <a class="carousel-control left" href="#myCarousel" data-slide="prev">
