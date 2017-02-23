@@ -66,7 +66,7 @@ include_once('connection.php');
     <div class="row"> 
     <?php 
     $con->next_result();
-    $query = $con->query("call SP_home_thumbnails()");
+    $query = $con->query("call SP_home_thumbnails();");
     while($res = $query->fetch_array()){
        echo '<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 pad-25-tb">
             <div class="card">

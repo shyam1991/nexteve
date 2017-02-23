@@ -91,4 +91,4 @@ $event_id=array();
 <div class="col-md-12"> 
       </div>
     </div>
-<?php include_once('includes/footer.php') ?>
+<?php include_once('includes/footer.php') ?>+
