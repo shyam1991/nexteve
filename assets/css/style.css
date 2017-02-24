@@ -67,6 +67,19 @@ color: #fff;
 	background: #777777;
 	color: #fff;
 }
+.btn-click-more{
+	background: none; 
+	border-bottom: 1px dotted #ccc; 
+	border-top: 1px dotted #ccc; 
+	color:#03a8c1;
+	text-align: center;
+	text-decoration: none;
+	background: #fafafa;
+}
+.btn-click-more:hover{
+	text-decoration:none;
+	color:#03a8c1;
+}
 /*custom buttons end*/
 /*font style and size start*/
 .font-14{

@@ -82,7 +82,7 @@ include_once('connection.php');
                      <label></label>
                     <a href="#" class="text-center">'.$res['evcategory'].'</a>
                     <h6 class="text-hash"><i class="fa fa-calendar" aria-hidden="true"></i> '.$res['evdate'].'</h6><h1 class=""></h1>
-                    <a href="events.php?event='.$res['evid'].'" class="btn btn-info btn-block" style="color:#fff;">Learn More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>                   
+                    <a href="events.php?event='.$res['evid'].'" class="btn btn-info btn-xs btn-block" style="color:#fff;">Learn More <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>                   
                 </div>
                 <div style="padding: 20px; position: absolute; background-color: #FFF; width: 100%; overflow-y: auto; left:0; bottom:0; height: 100%; z-index: 1; display: none;" id="'.$res['evid'].'cont">
                     ';
@@ -116,7 +116,7 @@ include_once('connection.php');
 </div>
 </section>
 <section>
- <button class="col-md-12 btn btn-default">MORE</button> 
+ <a href="search.php" class="col-md-12 btn-click-more" style="">- Click More -</a> 
 </section>
 </div>
 <?php include_once('includes/footer.php');?>
