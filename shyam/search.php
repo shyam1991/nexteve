@@ -63,6 +63,7 @@ require_once('functions.php');
   .thumbnail .btn{border-radius:0; box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12); font-size:20px}
 </style>
 <?php
+if (!isset($_POST['search'])){
 $search = $_POST['search'];
 $query = "SELECT *FROM `tb_event_titles` WHERE vchr_title LIKE '%$search%'";
 $result = mysqli_query($con,$query);
@@ -84,12 +85,17 @@ $event_id=array();
   else
   {
     echo "fail";
-  }
+  }}
+  else{
 
+    header("index.php");  
+  }
+ 
 ?>
 <div class="container">
 <div class="col-md-12">
   
       </div>
     </div>
+
 <?php include_once('includes/footer.php') ?>
