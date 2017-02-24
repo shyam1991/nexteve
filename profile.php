@@ -2,7 +2,7 @@
   include_once('includes/header.php');
   include_once('connection.php');
   $con->next_result();
-  $query = $con->query("CALL SP_organisation_details(1002)");
+  $query = $con->query("CALL SP_organisation_details(1001)");
   $res = $query->fetch_array();
   ?>
 <style type="text/css">
