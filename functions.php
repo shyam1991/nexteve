@@ -11,41 +11,33 @@ global $link;
 
 $event_id = join("','",$event_id);   
 $query = "SELECT 
-    Fk_ai_int_eid AS eid,
-    vchr_title AS event_title,
-    LEFT(ltext_events_details, 100) AS event_details,
-    vchr_org_name AS org_name,
-    vchr_org_place AS event_place,
-    vchr_org_city AS event_city,
-    CONCAT(date_events_start_date,
-            ' ',
-            date_events_start_time,
-            ' ',
-            DATE_FORMAT(date_events_start_date, '%W'),
-            ' to ',
-            date_events_end_date,
-            ' ',
-            date_events_end_time,
-            ' ',
-            DATE_FORMAT(date_events_end_date, '%W')) AS event_time,
-    CONCAT('data/event_images/', vchr_eimage_1) AS eimg1,
-    CONCAT('data/event_images/', vchr_eimage_2) AS eimg2,
-    CONCAT('data/event_images/', vchr_eimage_3) AS eimg3,
-    CONCAT('data/event_images/', vchr_eimage_4) AS eimg4,
-    CONCAT('data/event_images/', vchr_eimage_5) AS eimg5
+    ei.Fk_int_eid AS evid,
+    CONCAT('data/event_images/thumbnail/', vchr_img) AS thumimg,
+    vchr_title AS evname,
+    CONCAT(vchr_event_category) AS evcategory,
+    CONCAT(DATE_FORMAT(date_events_start_date, '%d %b %Y'),
+            ' - ',
+            DATE_FORMAT(date_events_end_date, '%d %b %Y')) AS evdate,
+    SUBSTRING(`ltext_events_details`,
+        1,
+        100) AS evdescp
 FROM
-    tb_event_titles ti
+    db_nexteves_admin.tb_events_img ei
         LEFT JOIN
-    tb_organiser_details od ON ti.Fk_ai_int_eid = od.Fk_int_orgid
+    tb_event_highlight_settings ehs ON ei.Fk_int_eid = ehs.Fk_int_eid
         LEFT JOIN
-    tb_event_images i ON ti.Fk_ai_int_eid = i.Fk_int_eid
+    tb_event_titles et ON ei.Fk_int_eid = et.Fk_ai_int_eid
         LEFT JOIN
-    tb_event_details ed ON ti.Fk_ai_int_eid = ed.Fk_int_eid
+    tb_events_timing evt ON ei.Fk_int_eid = evt.Fk_int_eid
         LEFT JOIN
-    tb_events_timing tm ON ti.Fk_ai_int_eid = tm.Fk_int_eid
-    WHERE `Fk_ai_int_eid` IN ('$event_id')";
-//  SELECT * FROM `tb_event_titles` LEFT JOIN `tb_organiser_details` ON tb_event_titles.Fk_ai_int_eid = tb_organiser_details.Fk_int_orgid WHERE `Fk_ai_int_eid` IN ('1001','1002','1003')
-
+    tb_event_details ed ON ei.Fk_int_eid = ed.Fk_int_eid
+        LEFT JOIN
+    tb_event_categories ec ON ed.int_event_categoryid = ec.Fk_int_ecid
+WHERE
+    chr_img_type = 'T'
+        AND ei.chr_status = 'Y'
+        AND ei.chr_status = 'Y'
+        AND ei.Fk_int_eid IN ('$event_id')";
 
 $result = mysqli_query($link,$query);
 //print_r($result);die();
@@ -83,16 +75,16 @@ $output='<div class="container">
   <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">	';
 				while($row = mysqli_fetch_assoc($result)){	
           //print_r($row);
-					$output.='<form action="test.php" id="event" method="post"> 
+					$output.='<form action="events.php" id="event" method="post"> 
           <a href="javascript: submitForm();">
-          <input type="hidden" value="'.$row['eid'].'" name="event"></input>
+          <input type="hidden" value="'.$row['evid'].'" name="event"></input>
           <div class="col-sm-4 col-md-3 col-lg-3 col-xs-12">
             <div class="thumbnail">
-              <img src="data/event_images/4x4/4x4.jpg" alt="Error load image">
+              <img src="'.$row['thumimg'].'" alt="Error load image">
               <div class="caption">
-          <h4 class="ename1 text-navy text-center"><strong>'.$row['event_title'].'</strong></h4>
-          <h6 class=" social-head text-center text-hash">'.$row['event_city'].'</h6>
-          <h6 class="text-center text-hash"><i class="fa fa-calendar" aria-hidden="true"></i> 27<small>th</small> Jan 2017 -- 29<small>th</small> Jan 2017</h6><h1 class="text-center"></h1>
+          <h5 class="ename1 text-navy text-center"><strong>'.$row['evname'].'</strong></h5>
+          <h6 class=" social-head text-center text-hash">'.$row['evcategory'].'</h6>
+          <h6 class="text-center text-hash"><i class="fa fa-calendar" aria-hidden="true"></i> '.$row['evdate'].'</h6><h1 class="text-center"></h1>
         </div>
         </div>
     </div>   
