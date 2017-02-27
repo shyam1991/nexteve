@@ -13,10 +13,10 @@
                 <div class="carousel-inner">
                     <?php 
 
-                    $event = $_POST['event'];
+                    $event = $_GET['event'];
                     echo $event;
                     $con->next_result();
-                    $qry = $con->query("call SP_events_banners(1001)");
+                    $qry = $con->query("call SP_events_banners($event)");
                     while($res = $qry->fetch_array()){
                       echo '<div class="item '.$res['imgorder'].'" style="">
                       <img src=" '.$res['banner'].'" alt="" class="">
@@ -38,7 +38,7 @@
         </div>
         <?php 
         $con->next_result();
-        $qry = $con->query("call SP_eventsdetails(1001)");
+        $qry = $con->query("call SP_eventsdetails($event)");
         $res = $qry->fetch_array();
         echo'   <div class="col-md-4 hidden-sm hidden-xs events-banhead-right">
           <h3 class="ename1">'.$res['evname'].'</h3>
@@ -75,7 +75,7 @@
                 <tbody>
                 <?php 
                 $con->next_result();
-                $qry = $con->query("call SP_event_ticket_charges(1001)");
+                $qry = $con->query("call SP_event_ticket_charges($event)");
                 while($res = $qry->fetch_array()){
                   echo'<tr>
                       <th scope="row">#</th>
@@ -93,7 +93,7 @@
                 <div class="">
                 <?php 
                 $con->next_result();
-                    $qry = $con->query("call SP_eventsdetails(1001)");
+                    $qry = $con->query("call SP_eventsdetails($event)");
                     $res = $qry->fetch_array();
                 echo'<p>'.$res['evname'].'</p>';
                 ?>

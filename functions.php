@@ -75,8 +75,8 @@ $output='<div class="container">
   <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">	';
 				while($row = mysqli_fetch_assoc($result)){	
           //print_r($row);
-					$output.='<form action="events.php" id="event" method="post"> 
-          <a href="javascript: submitForm();">
+					$output.='<form action="events.php" id="event" method="get"> 
+          <a href="events.php?event='.$row['evid'].'"">
           <input type="hidden" value="'.$row['evid'].'" name="event"></input>
           <div class="col-sm-4 col-md-3 col-lg-3 col-xs-12">
             <div class="thumbnail">
@@ -99,9 +99,23 @@ $output='<div class="container">
 
 ?>
 				<script>
-function submitForm(){
-    $('#event').submit();
-}
+
+
+
+
+
+
+
+ // $("#myform").submit(function() {
+ //        $.post("B.php", { id1: id }).done(function(data) {
+ //            alert( data );
+ //        });
+ //        return false; //true(post form data)
+ //    });
+
+
+
+
 </script>
 
 
